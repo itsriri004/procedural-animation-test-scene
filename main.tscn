@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c3wwqpcurxmuc"]
+
+[ext_resource type="Script" uid="uid://yku6l8e5sf13" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cbnjutyqjv0ek" path="res://stickmanprocedural.tscn" id="2_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1155, 20)
+
+[node name="MAIN" type="Node2D" unique_id=764160397]
+script = ExtResource("1_0xm2m")
+
+[node name="Player" parent="." unique_id=562865352 instance=ExtResource("2_h2yge")]
+position = Vector2(116, 286)
+scale = Vector2(0.41346192, 0.41346192)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2097802473]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=898913309]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=679938942]
+position = Vector2(581, 481)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ground" unique_id=1353001479]
